@@ -48,13 +48,12 @@ class Skin < ApplicationRecord
 
   accepts_nested_attributes_for :skin_parents, allow_destroy: true, reject_if: proc { |attrs| attrs[:position].blank? || (attrs[:parent_skin_title].blank? && attrs[:parent_skin_id].blank?) }
 
-  has_attached_file :icon,
-                    styles: { standard: "100x100>" },
-                    url: "/system/:class/:attachment/:id/:style/:basename.:extension",
-                    path: %w(staging production).include?(Rails.env) ? ":class/:attachment/:id/:style.:extension" : ":rails_root/public:url",
-                    storage: %w(staging production).include?(Rails.env) ? :s3 : :filesystem,
-                    s3_protocol: "https",
-                    default_url: "/images/skins/iconsets/default/icon_skins.png"
+  has_one_attached :icon
+
+  validates :icon, file_content_type: {
+  allow: ["image/jpeg", "image/jpg", "image/png", "image/gif"],
+  if: -> { icon.attached? },
+  }
 
   after_save :skin_invalidate_cache
   def skin_invalidate_cache
@@ -70,8 +69,6 @@ class Skin < ApplicationRecord
     end
   end
 
-  validates_attachment_content_type :icon, content_type: /image\/\S+/, allow_nil: true
-  validates_attachment_size :icon, less_than: 500.kilobytes, allow_nil: true
   validates_length_of :icon_alt_text, allow_blank: true, maximum: ArchiveConfig.ICON_ALT_MAX,
     too_long: ts("must be less than %{max} characters long.", max: ArchiveConfig.ICON_ALT_MAX)
 
@@ -580,7 +577,7 @@ class Skin < ApplicationRecord
                 end
 
     File.open(icon_path) do |icon_file|
-      self.icon = icon_file
+      self.icon = image_tag(icon_file)
     end
   end
 end
