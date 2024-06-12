@@ -39,7 +39,7 @@ OTW acknowledgements:
 * [BrowserStack](https://www.browserstack.com)
 * [Full list of acknowledgments](ACKNOWLEDGMENTS.md)
 
-melo acknowledgements:
+my acknowledgements:
 
 * [walter at squidge](https://squidge.org) - god bless you walter i would not be here without you and your efforts and skill
 * [steff at ad astra](https://www.adastrafanfic.com/) - thank you for all the encouragement and for helping me think of and implement some of these features!!! <3
