@@ -240,6 +240,9 @@ CATEGORY_SLASH_TAG_NAME: 'M/M'
 CATEGORY_FEMSLASH_TAG_NAME: 'F/F'
 CATEGORY_MULTI_TAG_NAME: 'Multi'
 CATEGORY_OTHER_TAG_NAME: 'Other'
+CATEGORY_QPR_TAG_NAME: 'QPR'
+CATEGORY_VS_TAG_NAME: 'vs.'
+# add other categories to your liking by directly editing in mySQL or running a DB migration. follow the above format, change names as needed, for instance QPR to WORD or whatever
 
 MEDIA_CATEGORY_NAME: 'Media'
 MEDIA_NO_TAG_NAME: 'No Media'
