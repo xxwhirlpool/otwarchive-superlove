@@ -2,7 +2,7 @@ superlove
 =========
 hi i'm fucking insane
 
-all credit go to the OTW for building this software in the first place i just have too much time on my hands. not sure on how to do licensing so i copied the OTW's license for this at the bottom
+all credit go to the OTW for building this software in the first place i just have too much time on my hands. not sure on how to do licensing so i copied the OTW's license for this (with my own acknowledgements) at the bottom
 
 adding in my additions to this repo is a work in progress but a list of what i've done to this code base, either on my own deploy of [otw-archive](https://superlove.sayitditto.net/) or personal use/experimenting:
 * paperclip to active storage backend port
@@ -31,7 +31,7 @@ License and Acknowledgments
 ----------
 The Archive code is licensed under [GPL-2.0-or-later](https://www.gnu.org/licenses/gpl-2.0.html) by the [Organization for Transformative Works](https://www.transformativeworks.org/).
 
-We benefit from software and services that are free to use for Open Source projects, including:
+OTW acknowledgements:
 
 * [RubyMine IDE](https://www.jetbrains.com/ruby/) by JetBrains
 * [Codeship](https://codeship.com/)
@@ -39,4 +39,8 @@ We benefit from software and services that are free to use for Open Source proje
 * [BrowserStack](https://www.browserstack.com)
 * [Full list of acknowledgments](ACKNOWLEDGMENTS.md)
 
-Thank you kindly!
+melo acknowledgements:
+
+* [walter at squidge](https://squidge.org) - god bless you walter i would not be here without you and your efforts and skill
+* [steff at ad astra](https://www.adastrafanfic.com/) - thank you for all the encouragement and for helping me think of and implement some of these features!!! <3
+* all my friends for supporting me in my craziness with this code base and helping me debug and everything! thank you all!
