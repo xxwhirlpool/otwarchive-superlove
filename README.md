@@ -2,7 +2,7 @@ superlove
 =========
 hi i'm fucking insane
 
-all credit go to the OTW for building this software in the first place i just have too much time on my hands. not sure on how to do licensing so i copied the OTW's license for this (with my own acknowledgements) at the bottom
+all credit goes to the OTW for building this software in the first place i just have too much time on my hands. not sure on how to do licensing so i copied the OTW's license for this (with my own acknowledgements) at the bottom
 
 adding in my additions to this repo is a work in progress but a list of what i've done to this code base, either on my own deploy of [otw-archive](https://superlove.sayitditto.net/) or personal use/experimenting:
 * paperclip to active storage backend port
