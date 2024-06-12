@@ -1,30 +1,19 @@
-OTW-Archive
+superlove
 =========
-[![Build Status](https://img.shields.io/github/actions/workflow/status/otwcode/otwarchive/automated-tests.yml?branch=master)](https://github.com/otwcode/otwarchive/actions/workflows/automated-tests.yml?query=branch%3Amaster) [![Codeship Status](https://img.shields.io/codeship/1f7468f0-7e15-0131-c059-7a8d26daf885/master.svg?label=codeship)](https://www.codeship.io/projects/14476) [![Coverage Status](https://img.shields.io/codecov/c/github/otwcode/otwarchive/master.svg)](https://app.codecov.io/gh/otwcode/otwarchive)
+hi i'm fucking insane
 
-The OTW-Archive software is an open-source web application intended for hosting archives of fanworks, including fanfic, fanart, and fan vids.
+all credit go to the OTW for building this software in the first place i just have too much time on my hands. not sure on how to do licensing so i copied the OTW's license for this at the bottom
 
-Its development is sponsored and managed by the [Organization for Transformative Works](https://www.transformativeworks.org/), a nonprofit organization by and for fans.
+adding in my additions to this repo is a work in progress but a list of what i've done to this code base, either on my own deploy of [otw-archive](https://superlove.sayitditto.net/) or personal use/experimenting:
+* paperclip to active storage backend port
+* invite request notes in queue
+* custom relationship categories for works (QPR and vs.)
+* PDF and EPUB embed support in works (though not hosted/uploaded directly to the server... yet)
+* docker production deployment
 
-Release Status
----------
-Development of the OTW-Archive software is an ongoing labor of love. You can see it in action on the [Archive of Our Own](https://archiveofourown.org/), aka AO3, a multifandom archive also run by the OTW.
-
-You can find more information about the [history and future of the AO3 project on the OTW website](https://www.transformativeworks.org/archive_of_our_own/).
-
-If you wish to use this software, SquidgeWorld has generously provided [setup notes](https://squidgeworld.org/works/34491).
-
-How to Contribute
-----------
-We welcome pull requests for bugs described in our issue tracker. Please see our [Contributing Guidelines](https://github.com/otwcode/otwarchive/blob/master/CONTRIBUTING.md) for further information!
-
-* [Bug Tracker](https://otwarchive.atlassian.net/projects/AO3/issues)
-* [Developer Documentation](https://github.com/otwcode/otwarchive/wiki)
-* [Commit Policy](https://github.com/otwcode/otwarchive/wiki/Commit-policy)
-
-API
-----------
-There is currently no API for the OTW-Archive software. While it is something we're considering for the future, we ask that contributors instead focus on issues already in our [Jira issue tracker](https://otwarchive.atlassian.net/).
+planned additions:
+* PDF and EPUB host/upload support
+* full image hosting/uploading support and user galleries based solely on rails + active storage (this is a massive scale idea so nothing concrete for it)
 
 License and Acknowledgments
 ----------
