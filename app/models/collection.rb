@@ -1,17 +1,13 @@
 class Collection < ApplicationRecord
   include Filterable
   include WorksOwner
+  
+  has_one_attached :icon
 
-  has_attached_file :icon,
-  styles: { standard: "100x100>" },
-  url: "/system/:class/:attachment/:id/:style/:basename.:extension",
-  path: %w(staging production).include?(Rails.env) ? ":class/:attachment/:id/:style.:extension" : ":rails_root/public:url",
-  storage: %w(staging production).include?(Rails.env) ? :s3 : :filesystem,
-  s3_protocol: "https",
-  default_url: "/images/skins/iconsets/default/icon_collection.png"
-
-  validates_attachment_content_type :icon, content_type: /image\/\S+/, allow_nil: true
-  validates_attachment_size :icon, less_than: 500.kilobytes, allow_nil: true
+  validates :icon, file_content_type: {
+  allow: ["image/jpeg", "image/jpg", "image/png", "image/gif"],
+  if: -> { icon.attached? },
+  }
 
   belongs_to :parent, class_name: "Collection", inverse_of: :children
   has_many :children, class_name: "Collection", foreign_key: "parent_id", inverse_of: :parent
