@@ -9,8 +9,10 @@ module SkinsHelper
 
   # we only actually display an image if there's a file
   def skin_preview_display(skin)
-    if skin && skin.icon_file_name
-      link_to image_tag(skin.icon.url(:standard), alt: skin.icon_alt_text, class: "icon", skip_pipeline: true), skin.icon.url(:original)
+    if skin && skin.icon && skin.icon.attached?
+      link_to image_tag(skin.icon, class: 'icon'), skin.icon
+    else skin.icon.attached?
+      link_to image_tag('/images/skins/previews/default.png', class: 'icon')
     end
   end
 
