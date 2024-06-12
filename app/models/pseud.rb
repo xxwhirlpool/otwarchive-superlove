@@ -3,24 +3,12 @@ class Pseud < ApplicationRecord
   include WorksOwner
   include Justifiable
 
-  has_attached_file :icon,
-    styles: { standard: "100x100>" },
-    path: if Rails.env.production?
-            ":attachment/:id/:style.:extension"
-          elsif Rails.env.staging?
-            ":rails_env/:attachment/:id/:style.:extension"
-          else
-            ":rails_root/public/system/:rails_env/:class/:attachment/:id_partition/:style/:filename"
-          end,
-    storage: %w(staging production).include?(Rails.env) ? :s3 : :filesystem,
-    s3_protocol: "https",
-    default_url: "/images/skins/iconsets/default/icon_user.png"
+  has_one_attached :icon
 
-  validates_attachment_content_type :icon,
-                                    content_type: %w[image/gif image/jpeg image/png],
-                                    allow_nil: true
-
-  validates_attachment_size :icon, less_than: 500.kilobytes, allow_nil: true
+  validates :icon, file_content_type: {
+  allow: ["image/jpeg", "image/jpg", "image/png", "image/gif"],
+  if: -> { icon.attached? },
+  }
 
   NAME_LENGTH_MIN = 1
   NAME_LENGTH_MAX = 40
