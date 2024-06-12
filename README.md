@@ -15,6 +15,18 @@ planned additions:
 * PDF and EPUB host/upload support
 * full image hosting/uploading support and user galleries based solely on rails + active storage (this is a massive scale idea so nothing concrete for it)
 
+manual mySQL DB inserts until i figure out adding them to this repo as migrations
+----------
+insert new QPR and vs. relationship categories:
+```sql
+insert into tags (name, canonical, created_at, updated_at, type, sortable_name)
+values('QPR', 1, NOW(), NOW(), 'Category', 'QPR');
+```
+```sql
+insert into tags (name, canonical, created_at, updated_at, type, sortable_name)
+values('vs.', 1, NOW(), NOW(), 'Category', 'vs.');
+```
+
 License and Acknowledgments
 ----------
 The Archive code is licensed under [GPL-2.0-or-later](https://www.gnu.org/licenses/gpl-2.0.html) by the [Organization for Transformative Works](https://www.transformativeworks.org/).
