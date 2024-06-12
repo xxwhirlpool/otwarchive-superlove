@@ -74,6 +74,11 @@ gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 gem 'permit_yo'
 gem "pundit"
 
+gem 'image_processing'
+gem 'active_storage_validations'
+gem 'file_validators'
+gem 'pry'
+
 # fix for annoying UTF-8 error messages as per this:
 # http://openhood.com/rack/ruby/2010/07/15/rack-test-warning/
 gem 'escape_utils', '1.2.1'
