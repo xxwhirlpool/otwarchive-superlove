@@ -111,6 +111,10 @@ module TagsHelper
     def hide_freeform?(creation)
     current_user.is_a?(User) && current_user.preference && current_user.preference.hide_freeform? && !current_user.is_author_of?(creation)
   end
+  
+    def hide_eras?(creation)
+    current_user.is_a?(User) && current_user.preference && current_user.preference.hide_eras? && !current_user.is_author_of?(creation)
+  end
 
   # Link to show tags if they're currently hidden
   def show_hidden_tags_link(creation, tag_type)
@@ -190,7 +194,7 @@ module TagsHelper
 
   def blurb_tag_block(item, tag_groups=nil)
     tag_groups ||= item.tag_groups
-    categories = ['ArchiveWarning', 'Relationship', 'Character', 'Freeform']
+    categories = ['ArchiveWarning', 'Relationship', 'Era', 'Character', 'Freeform']
     tag_block = ""
 
     categories.each do |category|
@@ -208,6 +212,11 @@ module TagsHelper
             link_array = tags.collect{|tag| link_to_tag_works(tag)}
             tag_block << "<li class='#{class_name}'>" + link_array.join("</li> <li class='#{class_name}'>") + '</li>'
           end
+
+        #  if (class_name == "era")
+        #    link_array = tags.collect{|tag| link_to_tag_works(tag)}
+        #    tag_block << "<li class='#{class_name}'>" + link_array.join("</li> <li class='#{class_name}'>") + '</li>'
+        #  end
         end
       end
     end
@@ -264,6 +273,9 @@ module TagsHelper
 
     categories = tag_groups['Category']
     symbol_block << get_symbol_link(get_category_class(categories), get_title_string(categories, "category"))
+ 
+    eras = tag_groups['Era']
+    symbol_block << get_symbol_link(get_era_class(eras), get_title_string(eras, "era"))
 
     if [Work, Series].include?(item.class)
       if item.complete?
@@ -348,6 +360,14 @@ module TagsHelper
       else
         "category-none category"
       end
+    end
+  end
+  
+  def get_era_class(era_tags)
+    if era_tags.blank?
+      "era-none era"
+    else
+      "era-none era"
     end
   end
 end
