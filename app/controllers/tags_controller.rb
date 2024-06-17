@@ -396,7 +396,7 @@ class TagsController < ApplicationController
       :name, :type, :canonical, :unwrangleable, :adult, :sortable_name,
       :meta_tag_string, :sub_tag_string, :merger_string, :syn_string,
       :media_string, :fandom_string, :character_string, :relationship_string,
-      :freeform_string,
+      :era_string, :freeform_string,
       associations_to_remove: []
     )
   end
