@@ -30,6 +30,7 @@ insert new era type tag
 ```sql
 insert into tags (name, canonical, created_at, updated_at, type, sortable_name)
 values('vs.', 1, NOW(), NOW(), 'Category', 'vs.');
+```
 ```sql
 insert into tags (name, canonical, created_at, updated_at, type, sortable_name)
 values('Silver Age (1957-1970)', 1, NOW(), NOW(), 'Era', 'Silver Age (1957-1970)');
