@@ -13,6 +13,8 @@ module TagTypeHelper
       "freeform"
     when "ArchiveWarning"
       "warning"
+    when "Era"
+      "era"
     else
       tag_type.downcase
     end
@@ -34,6 +36,8 @@ module TagTypeHelper
               Freeform.label_name
             when "tag"
               "Bookmarker's Tag"
+            when "era"
+              Era.label_name
             else
               tag_type.humanize.titleize
             end
