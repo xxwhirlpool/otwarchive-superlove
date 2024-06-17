@@ -890,6 +890,7 @@ class WorksController < ApplicationController
       rating: params[:work][:rating_string],
       relationship: params[:work][:relationship_string],
       category: params[:work][:category_strings],
+      era: params[:work][:era_strings],
       freeform: params[:work][:freeform_string],
       notes: params[:notes],
       encoding: params[:encoding],
@@ -904,7 +905,7 @@ class WorksController < ApplicationController
   def work_params
     params.require(:work).permit(
       :rating_string, :fandom_string, :relationship_string, :character_string,
-      :archive_warning_string, :category_string,
+      :archive_warning_string, :category_string, :era_string
       :freeform_string, :summary, :notes, :endnotes, :collection_names, :recipients, :wip_length,
       :backdate, :language_id, :work_skin_id, :restricted, :comment_permissions,
       :moderated_commenting_enabled, :title, :pseuds_to_add, :collections_to_add,
@@ -913,6 +914,7 @@ class WorksController < ApplicationController
       challenge_assignment_ids: [],
       challenge_claim_ids: [],
       category_strings: [],
+      era_strings: [],
       archive_warning_strings: [],
       author_attributes: [:byline, ids: [], coauthors: []],
       series_attributes: [:id, :title],
@@ -929,8 +931,9 @@ class WorksController < ApplicationController
   def work_tag_params
     params.require(:work).permit(
       :rating_string, :fandom_string, :relationship_string, :character_string,
-      :archive_warning_string, :category_string, :freeform_string, :language_id,
+      :archive_warning_string, :category_string, :era_string, :freeform_string, :language_id,
       category_strings: [],
+      era_strings: [],
       archive_warning_strings: []
     )
   end
@@ -948,6 +951,7 @@ class WorksController < ApplicationController
       :fandom_names,
       :rating_ids,
       :character_names,
+      :era_names,
       :relationship_names,
       :freeform_names,
       :hits,
@@ -967,6 +971,7 @@ class WorksController < ApplicationController
       archive_warning_ids: [],
       warning_ids: [], # backwards compatibility
       category_ids: [],
+      era_ids: [],
       rating_ids: [],
       fandom_ids: [],
       character_ids: [],
