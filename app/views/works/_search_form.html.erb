@@ -137,6 +137,19 @@
         </ul>
       </dd>
       <dt>
+        <%= ts("Eras") %>
+      </dt>
+      <dd>
+        <ul>
+          <% for tag in Era.canonical.by_name.sort %>
+            <li>
+              <%= check_box_tag "work_search[era_ids][]", tag.id, @search.era_ids.present? && @search.era_ids.include?(tag.id.to_s), :id => "era_#{tag.id}" %>
+              <%= label_tag "era_#{tag.id}", tag.name %>
+            </li>
+          <% end %>
+        </ul>
+      </dd>
+      <dt>
         <%= f.label :character_names, ts("Characters") %>
       </dt>
       <dd>
