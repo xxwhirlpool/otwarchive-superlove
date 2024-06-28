@@ -87,6 +87,7 @@ class WorkIndexer < Indexer
         :rating_ids,
         :archive_warning_ids,
         :category_ids,
+        :era_ids,
         :fandom_ids,
         :character_ids,
         :relationship_ids,
