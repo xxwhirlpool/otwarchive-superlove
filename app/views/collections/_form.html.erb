@@ -66,8 +66,12 @@
         <ul class="notes">
           <% unless @collection.new_record? %>
             <li>
+            <% if @collection.icon.attached? %>
               <%= image_tag(@collection.icon, skip_pipeline: true) %>
               <%= ts("This is the collection's icon.") %>
+            <% else %>
+              <%= image_tag('/images/skins/iconsets/default/icon_user.png', class: 'icon') %>
+            <% end %>
             </li>
           <% end %>
           <li><%= ts("Each collection can have one icon") %></li>
