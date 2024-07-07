@@ -415,6 +415,6 @@ class Collection < ApplicationRecord
   alias_method :delete_icon?, :delete_icon
 
   def clear_icon
-    self.icon = nil if delete_icon? && !icon.dirty?
+    self.icon = nil if delete_icon?
   end
 end
