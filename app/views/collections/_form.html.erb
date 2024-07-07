@@ -74,7 +74,7 @@
           <li><%= ts("Icons can be in png, jpeg or gif form") %></li>
           <li><%= ts("Icons should be sized 100x100 pixels for best results") %></li>
         </ul>
-        <% if @collection.icon_file_name %>
+        <% if @collection.icon %>
           <%= collection_form.check_box :delete_icon, {:checked => false} %>
           <%= collection_form.label :delete_icon, ts("Delete collection icon and revert to our default") %>
         <% end %>
