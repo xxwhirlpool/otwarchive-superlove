@@ -13,7 +13,6 @@ adding in my additions to this repo is a work in progress but a list of what i'v
 
 planned additions:
 * PDF and EPUB host/upload support
-* full image hosting/uploading support and user galleries based solely on rails + active storage (this is a massive scale idea so nothing concrete for it)
 
 manual mySQL DB inserts until i figure out adding them to this repo as migrations
 ----------
